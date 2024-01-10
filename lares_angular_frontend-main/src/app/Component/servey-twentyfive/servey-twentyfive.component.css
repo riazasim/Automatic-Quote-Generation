@@ -1,0 +1,40 @@
+.radio-group label{
+    display: flex;
+    align-items: center;
+    margin-bottom: 0px !important;
+}
+.radio-group p {
+    margin: 0 0px 0px 10px !important;
+}
+
+.radio-group label span.radio {
+    width: 28px;
+    height: 28px;
+    border: 2px solid #3498db;
+    background-color: transparent;
+    border-radius: 50%;
+    display: inline-flex;
+    cursor: pointer;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+}
+
+.radio-group label input {
+    display: none;
+}
+
+.radio-group label input:checked+span.radio::before {
+    position: absolute;
+    content: "";
+    left: 1.05px;
+    top: 1.2px;
+    border: 2px solid #3498db;
+    background-color: #3498db;
+    width: 22px;
+    height: 22px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}

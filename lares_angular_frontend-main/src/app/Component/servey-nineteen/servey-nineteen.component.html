@@ -1,0 +1,59 @@
+<form
+  [formGroup]="checkOutLPRSetupForm"
+  (ngSubmit)="formSubmit()"
+  class="form-inner location-form "
+>
+  <h3 class="heading-top">Checkout LPR Set Up</h3>
+  <p class="pera mb-0">
+    Depending on the positioning of the vehicle at the entry point, you may need more two cameras to be able to accurately read the license plate.
+  </p>
+  <p class="pera mb-0">You may also want to read both license plates (front and rear).</p>
+  <p class="pera mb-0">Make sure you set up the correct configuration for this access profile. </p>
+
+  <div class="row form-row my-5 pt-lg-4">
+    <div class="col-md-12 my-1">
+      <div class="input-group my-1">
+        <span class="icon icon-cctv"></span>
+        <select
+          formControlName="AllowedCameras1"
+          class="form-control text-center"
+          placeholder="Location Name"
+          value=""
+        >
+          <option value="" selected>No. of CCTV cameras for front licens plate</option>
+          <option value="One">One</option>
+          <option value="Two">Two</option>
+          <option value="Three">Three</option>
+        </select>
+      </div>
+      <app-field-error-display
+        [displayError]="isFieldValid('AllowedCameras1')"
+        errorMsg="Please select the number of cameras allowed"
+      >
+      </app-field-error-display>
+    </div>
+    <div class="col-md-12 my-1">
+      <div class="input-group my-1">
+        <span class="icon icon-cctv"></span>
+        <select
+          formControlName="AllowedCameras2"
+          class="form-control text-center"
+          placeholder="Location Name"
+        >
+          <option value="" selected>No. of CCTV cameras for rear licens plate</option>
+          <option value="One">One</option>
+          <option value="Two">Two</option>
+          <option value="Three">Three</option>
+        </select>
+      </div>
+      <app-field-error-display
+        [displayError]="isFieldValid('AllowedCameras2')"
+        errorMsg="Please select the number of cameras allowed"
+      >
+      </app-field-error-display>
+    </div>
+  </div>
+
+  <button class="btn btn-next" next type="submit">Next</button>
+  <button class="btn btn-back mt-2" (click)="goBack()">Back</button>
+</form>

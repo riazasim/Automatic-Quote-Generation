@@ -1,0 +1,115 @@
+.checkbox-group label svg path {
+  fill: #3498db;
+}
+.checkbox-group label.active {
+  background-color: #3498db;
+}
+.checkbox-group label.active svg path {
+  fill: #ffffff;
+}
+.checkbox-group label input {
+  display: none;
+}
+.location-form .form-row {
+  margin: 20px -15px;
+}
+.location-form ::placeholder,
+.location-form select {
+  color: #696969;
+  font-size: 14px;
+}
+.location-form .form-control {
+  box-shadow: none;
+  border: 2px solid #cbcbcb;
+  border-radius: 10px !important;
+  height: 60px;
+  margin: 0px 0px 10px;
+  padding: 12px 20px 12px 45px;
+  position: relative;
+  z-index: 99;
+}
+.location-form .input-group span.icon {
+  position: absolute;
+  content: "";
+  left: 10px;
+  top: 12px;
+  background-position: center;
+  background-repeat: no-repeat;
+  padding: 18px 15px;
+  transform: scale(0.8);
+  z-index: 100;
+}
+.location-form .input-group .icon-user {
+  background: url("../../../assets/images/person-icon.png");
+}
+.location-form .input-group .icon-email {
+  background: url("../../../assets/images/envelope-icon.png");
+}
+.location-form .input-group .icon-phone {
+  background: url("../../../assets/images/phone-icon.png");
+}
+.location-form .input-group .icon-home {
+  background: url("../../../assets/images/home-icon.png");
+}
+.location-form .input-group .icon-web {
+  background: url("../../../assets/images/web-icon.png");
+}
+.location-form .input-group .icon-location {
+  background: url("../../../assets/images/location-icon.png");
+}
+.checkbox-inline {
+  display: flex;
+  align-items: center;
+}
+.checkbox-inline p {
+  margin: 0;
+}
+.disabled {
+  cursor: not-allowed !important;
+}
+.form-group {
+  display: block;
+  margin-bottom: 15px;
+}
+
+.form-group input {
+  padding: 0;
+  height: initial;
+  width: initial;
+  margin-bottom: 0;
+  display: none;
+  cursor: pointer;
+}
+
+.form-group label {
+  position: relative;
+  cursor: pointer;
+}
+
+.form-group label:before {
+  content:'';
+  -webkit-appearance: none;
+  background-color: transparent;
+  border: 1px solid #08073A;
+  border-radius: 3px;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05), inset 0px -15px 10px -12px rgba(0, 0, 0, 0.05);
+  padding: 10px;
+  display: inline-block;
+  position: relative;
+  vertical-align: middle;
+  cursor: pointer;
+  margin-right: 5px;
+}
+
+.form-group input:checked + label:after {
+  content: '';
+  display: block;
+  position: absolute;
+  top: 5px;
+  left: 9px;
+  width: 6px;
+  height: 14px;
+  border: solid #08073A;
+  border-width: 0 2px 2px 0;
+  transform: rotate(45deg);
+}

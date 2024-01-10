@@ -1,0 +1,110 @@
+<form
+  [formGroup]="QouteDeliveryForm"
+  (ngSubmit)="formSubmit()"
+  class="form-inner location-form "
+>
+  <h3 class="heading-top">Quote delivery</h3>
+  <p class="pera">
+    Thank you for your time! Your quote will be delivered in 5 to 10 minutes.
+  </p>
+
+  <div class="row form-row mt-4 pt-3">
+    <div class="my-2 col-12">
+      <div class="input-group">
+        <span class="icon icon-user"></span>
+        <input
+          type="text"
+          class="form-control text-center"
+          formControlName="first_name"
+          placeholder="First Name"
+        />
+      </div>
+      <app-field-error-display
+        [displayError]="isFieldValid('first_name')"
+        errorMsg="Please enter your first name"
+      >
+      </app-field-error-display>
+    </div>
+    <div class="my-2 col-12">
+      <div class="input-group">
+        <span class="icon icon-user"></span>
+        <input
+          type="text"
+          class="form-control text-center"
+          formControlName="last_name"
+          placeholder="Last Name"
+        />
+      </div>
+      <app-field-error-display
+        [displayError]="isFieldValid('last_name')"
+        errorMsg="Please enter your last name"
+      >
+      </app-field-error-display>
+    </div>
+    <div class="my-2 col-12">
+      <div class="input-group">
+        <span class="icon icon-email"></span>
+        <input
+          type="email"
+          class="form-control text-center"
+          formControlName="email"
+          placeholder="Email"
+        />
+      </div>
+      <app-field-error-display
+        [displayError]="isFieldValid('email')"
+        errorMsg="Please enter valid Email address"
+      >
+      </app-field-error-display>
+    </div>
+    <div class="my-2 col-12">
+      <div class="input-group">
+        <span class="icon icon-phone"></span>
+        <input
+          type="number"
+          class="form-control text-center"
+          formControlName="mobile"
+          placeholder="Mobile"
+        />
+      </div>
+      <app-field-error-display
+        [displayError]="isFieldValid('mobile')"
+        errorMsg="Please enter mobile number"
+      >
+      </app-field-error-display>
+    </div>
+    <div class="my-2 col-12">
+      <div class="form-group">
+        <input type="checkbox" id="html">
+        <label for="html">sign up for our newsletter</label>
+      </div>
+    </div>
+  </div>
+
+  <div class="my-1" *ngIf="showErrorMessage">
+    <div class="error-msg">
+      {{ errorMessage }}
+    </div>
+  </div>
+  <button
+    class="btn btn-next"
+    *ngIf="submitingForm === false"
+    next
+    type="submit"
+  >
+    Submit
+  </button>
+  <button
+    class="btn disabled btn-next"
+    [disabled]="submitingForm"
+    *ngIf="submitingForm"
+  >
+    <div class="d-flex justify-content-center">
+      <div class="spinner-border" role="status">
+        <span class="sr-only"></span>
+      </div>
+    </div>
+  </button>
+
+  <button class="btn btn-back mt-2" (click)="goBack()">Back</button>
+</form>

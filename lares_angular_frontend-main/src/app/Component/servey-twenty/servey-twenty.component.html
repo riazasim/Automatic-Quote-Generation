@@ -1,0 +1,59 @@
+<form
+  [formGroup]="checkinLPRSetupForm"
+  (ngSubmit)="formSubmit()"
+  class="form-inner location-form"
+>
+  <h3 class="heading-top">Checkin LPR Set Up</h3>
+  <p class="pera">
+    Same logic is applied for exit points. <br>
+    Make sure you set up the correct configuration for this access profile. 
+  </p>
+
+  <div class="row form-row my-5 pt-4">
+    <div class="col-md-12">
+      <div class="input-group">
+        <span class="icon icon-cctv"></span>
+        <select
+          formControlName="AllowedCameras1"
+          class="form-control text-center"
+          placeholder="Location Name"
+        >
+          <option value="" selected>No. of CCTV cameras for front licens plate</option>
+          <option value="One">One</option>
+          <option value="Two">Two</option>
+          <option value="Three">Three</option>
+        </select>
+      </div>
+      <app-field-error-display
+        [displayError]="isFieldValid('AllowedCameras1')"
+        errorMsg="Please select cameras"
+      >
+      </app-field-error-display>
+    </div>
+    <div class="col-md-12">
+      <div class="input-group">
+        <span class="icon icon-cctv"></span>
+        <select
+          formControlName="AllowedCameras2"
+          class="form-control text-center"
+          placeholder="Location Name"
+        >
+          <option value="" selected>No. of CCTV cameras for rear licens plate</option>
+          <option value="One">One</option>
+          <option value="Two">Two</option>
+          <option value="Three">Three</option>
+        </select>
+      </div>
+      <app-field-error-display
+        [displayError]="isFieldValid('AllowedCameras2')"
+        errorMsg="Please select cameras"
+      >
+      </app-field-error-display>
+    </div>
+  </div>
+
+  <button class="btn btn-next" next type="submit">Next</button>
+  <button class="btn btn-back mt-2" type="button" (click)="goBack()">
+    Back
+  </button>
+</form>

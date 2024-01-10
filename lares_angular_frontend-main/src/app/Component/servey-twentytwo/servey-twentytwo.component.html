@@ -1,0 +1,179 @@
+<form
+  (ngSubmit)="formSubmit()"
+  [formGroup]="applyVehicleProfile"
+  class="form-inner location-form my-5"
+>
+  <h3 class="heading-top mb-5">Apply Vehicle profile</h3>
+  <p class="pera">
+    Please select the access points with Vehicle access to which you want to
+    apply the this access profile.
+  </p>
+  <p class="pera">
+    You will be required to add new Vehicle access profiles until all access
+    points have such a profile association. You can also eliminate some access
+    points from this quote.
+  </p>
+
+  <div class="form-grid mt-5">
+    <div class="row form-row">
+      <div class="col-sm-8">
+        <div class="input-group">
+          <span class="icon icon-home"></span>
+          <input
+            type="text"
+            class="form-control"
+            placeholder="Access point name"
+            formControlName="access_point"
+          />
+        </div>
+        <app-field-error-display
+          [displayError]="isFieldValid('access_point')"
+          errorMsg="Please enter access Point name"
+        >
+        </app-field-error-display>
+        <app-field-error-display
+          [displayError]="isFieldValid('access_type')"
+          errorMsg="Please enter access Point type"
+        >
+        </app-field-error-display>
+      </div>
+      <div class="col-sm-3 mb-sm-0 mb-4">
+        <div class="button-group">
+          <label for="checkboxOne" class="checkbox-label">
+            <input
+              type="radio"
+              formControlName="access_type"
+              id="checkboxOne"
+              value="person"
+              name="access_type"
+            />
+            <span>
+              <svg
+                width="40"
+                height="35"
+                viewBox="0 0 40 35"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  d="M6.25 20C6.25 18.6172 7.36953 17.5 8.75 17.5C10.1328 17.5 11.25 18.6172 11.25 20C11.25 21.3828 10.1328 22.5 8.75 22.5C7.36953 22.5 6.25 21.3828 6.25 20ZM33.75 20C33.75 21.3828 32.6328 22.5 31.25 22.5C29.8672 22.5 28.75 21.3828 28.75 20C28.75 18.6172 29.8672 17.5 31.25 17.5C32.6328 17.5 33.75 18.6172 33.75 20ZM3.75781 12.25L6.43359 4.60391C7.39844 1.84609 10 0 12.9219 0H27.0781C29.9297 0 32.6016 1.84609 33.5703 4.60391L36.2422 12.25C38.4844 13.5469 40 15.9688 40 18.75V33.125C40 34.1641 39.1641 35 38.125 35C37.0859 35 36.25 34.1641 36.25 33.125V28.75H3.75V33.125C3.75 34.1641 2.91016 35 1.875 35C0.839844 35 0 34.1641 0 33.125V18.75C0 15.9688 1.51172 13.5469 3.75781 12.25ZM8.07812 11.25H31.9219L30.0234 5.84375C29.5859 4.58906 28.4062 3.75 27.0781 3.75H12.9219C11.5938 3.75 10.4141 4.58906 9.97656 5.84375L8.07812 11.25ZM32.5 15H7.5C5.42891 15 3.75 16.6797 3.75 18.75V25H36.25V18.75C36.25 16.6797 34.5703 15 32.5 15Z"
+                  fill="#3498DB"
+                />
+              </svg>
+            </span>
+          </label>
+          <label for="checkboxTwo" class="checkbox-label label-trash">
+            <input
+              type="radio"
+              id="checkboxTwo"
+              name="access_type"
+              formControlName="access_type"
+              value="trash"
+            />
+            <span>
+              <svg
+                width="36"
+                height="37"
+                viewBox="0 0 36 37"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  d="M1 8H4.675M4.675 8H34.075M4.675 8V32.5C4.675 33.4283 5.06219 34.3185 5.75138 34.9749C6.44058 35.6313 7.37533 36 8.35 36H26.725C27.6997 36 28.6344 35.6313 29.3236 34.9749C30.0128 34.3185 30.4 33.4283 30.4 32.5V8H4.675ZM10.1875 8V4.5C10.1875 3.57174 10.5747 2.6815 11.2639 2.02513C11.9531 1.36875 12.8878 1 13.8625 1H21.2125C22.1872 1 23.1219 1.36875 23.8111 2.02513C24.5003 2.6815 24.8875 3.57174 24.8875 4.5V8M13.8625 16.75V27.25M21.2125 16.75V27.25"
+                  stroke="#EC7063"
+                  stroke-width="2"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                />
+              </svg>
+            </span>
+          </label>
+        </div>
+      </div>
+    </div>
+    <div class="row form-row">
+      <div class="col-sm-8">
+        <div class="input-group">
+          <span class="icon icon-home"></span>
+          <input
+            type="text"
+            class="form-control"
+            placeholder="Access point name"
+            formControlName="access_point"
+          />
+        </div>
+        <app-field-error-display
+          [displayError]="isFieldValid('access_point')"
+          errorMsg="Please enter access Point name"
+        >
+        </app-field-error-display>
+        <app-field-error-display
+          [displayError]="isFieldValid('access_type')"
+          errorMsg="Please enter access Point type"
+        >
+        </app-field-error-display>
+      </div>
+      <div class="col-sm-3 mb-sm-0 mb-4">
+        <div class="button-group">
+          <label for="checkboxThree" class="checkbox-label">
+            <input
+              type="radio"
+              formControlName="access_type_1"
+              id="checkboxThree"
+              value="person"
+              name="access_type_1"
+            />
+            <span>
+              <svg
+                width="40"
+                height="35"
+                viewBox="0 0 40 35"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  d="M6.25 20C6.25 18.6172 7.36953 17.5 8.75 17.5C10.1328 17.5 11.25 18.6172 11.25 20C11.25 21.3828 10.1328 22.5 8.75 22.5C7.36953 22.5 6.25 21.3828 6.25 20ZM33.75 20C33.75 21.3828 32.6328 22.5 31.25 22.5C29.8672 22.5 28.75 21.3828 28.75 20C28.75 18.6172 29.8672 17.5 31.25 17.5C32.6328 17.5 33.75 18.6172 33.75 20ZM3.75781 12.25L6.43359 4.60391C7.39844 1.84609 10 0 12.9219 0H27.0781C29.9297 0 32.6016 1.84609 33.5703 4.60391L36.2422 12.25C38.4844 13.5469 40 15.9688 40 18.75V33.125C40 34.1641 39.1641 35 38.125 35C37.0859 35 36.25 34.1641 36.25 33.125V28.75H3.75V33.125C3.75 34.1641 2.91016 35 1.875 35C0.839844 35 0 34.1641 0 33.125V18.75C0 15.9688 1.51172 13.5469 3.75781 12.25ZM8.07812 11.25H31.9219L30.0234 5.84375C29.5859 4.58906 28.4062 3.75 27.0781 3.75H12.9219C11.5938 3.75 10.4141 4.58906 9.97656 5.84375L8.07812 11.25ZM32.5 15H7.5C5.42891 15 3.75 16.6797 3.75 18.75V25H36.25V18.75C36.25 16.6797 34.5703 15 32.5 15Z"
+                  fill="#3498DB"
+                />
+              </svg>
+            </span>
+          </label>
+          <label for="checkboxFour" class="checkbox-label label-trash">
+            <input
+              type="radio"
+              id="checkboxFour"
+              name="access_type_1"
+              formControlName="access_type_1"
+              value="trash"
+            />
+            <span>
+              <svg
+                width="36"
+                height="37"
+                viewBox="0 0 36 37"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  d="M1 8H4.675M4.675 8H34.075M4.675 8V32.5C4.675 33.4283 5.06219 34.3185 5.75138 34.9749C6.44058 35.6313 7.37533 36 8.35 36H26.725C27.6997 36 28.6344 35.6313 29.3236 34.9749C30.0128 34.3185 30.4 33.4283 30.4 32.5V8H4.675ZM10.1875 8V4.5C10.1875 3.57174 10.5747 2.6815 11.2639 2.02513C11.9531 1.36875 12.8878 1 13.8625 1H21.2125C22.1872 1 23.1219 1.36875 23.8111 2.02513C24.5003 2.6815 24.8875 3.57174 24.8875 4.5V8M13.8625 16.75V27.25M21.2125 16.75V27.25"
+                  stroke="#EC7063"
+                  stroke-width="2"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                />
+              </svg>
+            </span>
+          </label>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- <a (click)="addItem()" class="add-access">
+    <img src="../../../assets/images/plus-icon.png" alt="" /> Add New Access
+    Point</a
+  > -->
+  <div class="mt-200">
+    <button class="btn btn-next" type="submit">Next</button>
+    <button class="btn btn-back mt-2" (click)="goBack()">Back</button>
+  </div>
+</form>

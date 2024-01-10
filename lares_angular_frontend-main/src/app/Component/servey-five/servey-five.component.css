@@ -1,0 +1,23 @@
+.thankyou-form {
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  /* flex-wrap: wrap; */
+  flex-direction: column;
+  justify-content: center;
+}
+
+.thankyou-footer {
+  margin: 100px 0px 0px;
+  text-align: center;
+}
+.thankyou-content p {
+  font-size: 18px;
+  font-weight: 700;
+  margin-bottom: 0px;
+  line-height: 22px;
+  text-align: left;
+}
+.thankyou-footer img {
+  max-width: 100%;
+}

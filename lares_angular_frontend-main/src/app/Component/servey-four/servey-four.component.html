@@ -1,0 +1,163 @@
+<form
+  [formGroup]="contactForm"
+  (ngSubmit)="formSubmit()"
+  class="contact-form mt-5"
+>
+  <h3 class="heading-top text-center">Contact Details</h3>
+
+  <p class="pera">You opted to be contacted by one of our representatives</p>
+  <p class="pera">
+    Please give us your contact details and let us know what are you interested
+    in.
+  </p>
+
+  <small>Contact details</small>
+
+  <div class="row form-row">
+    <div class="my-1 col-md-6">
+      <div class="input-group form-group has-error d-flex align-items-center">
+        <span class="icon icon-user"></span>
+        <input
+          type="text"
+          required
+          class="form-control"
+          placeholder="First Name"
+          formControlName="first_name"
+        />
+      </div>
+      <app-field-error-display
+        [displayError]="isFieldValid('first_name')"
+        errorMsg="Please enter your first name"
+      >
+      </app-field-error-display>
+    </div>
+    <div class="my-1 col-md-6">
+      <div class="input-group form-group">
+        <span class="icon icon-user"></span>
+        <input
+          type="text"
+          required
+          class="form-control"
+          placeholder="Last Name"
+          formControlName="last_name"
+        />
+      </div>
+      <app-field-error-display
+        [displayError]="isFieldValid('last_name')"
+        errorMsg="Please enter your last name"
+      >
+      </app-field-error-display>
+    </div>
+    <div class="my-1 col-md-12">
+      <div class="input-group form-group">
+        <span class="icon icon-email"></span>
+        <input
+          type="email"
+          required
+          class="form-control"
+          placeholder="Email"
+          formControlName="email"
+        />
+      </div>
+      <app-field-error-display
+        [displayError]="isFieldValid('email')"
+        errorMsg="Please enter valid Email address"
+      >
+      </app-field-error-display>
+    </div>
+    <div class="my-1 col-md-12">
+      <div class="input-group form-group">
+        <span class="icon icon-phone"></span>
+        <input
+          type="number"
+          required
+          class="form-control"
+          placeholder="Mobile"
+          formControlName="mobile"
+        />
+      </div>
+      <app-field-error-display
+        [displayError]="isFieldValid('mobile')"
+        errorMsg="Please enter mobile number"
+      >
+      </app-field-error-display>
+    </div>
+    <div class="my-1 col-md-12">
+      <div class="input-group form-group">
+        <span class="icon icon-phone"></span>
+        <select
+          required
+          formControlName="country"
+          class="form-control"
+          ngModel
+        >
+          <option value="" selected>Country</option>
+          <option value="Pakistan">Pakistan</option>
+        </select>
+      </div>
+      <app-field-error-display
+        [displayError]="isFieldValid('country')"
+        errorMsg="Please enter country number"
+      >
+      </app-field-error-display>
+    </div>
+  </div>
+
+  <small>Interest</small>
+  <div class="checkbox-items my-2">
+    <div class="inline-checkbox my-2">
+      <input
+        type="checkbox"
+        formControlName="interested1"
+        value="I want to know more about your solutions"
+      />
+      <small class="pl-2"> I want to know more about your solutions</small>
+    </div>
+    <app-field-error-display
+      [displayError]="isFieldValid('intrests.interested1')"
+      errorMsg="Please inform your country"
+    >
+    </app-field-error-display>
+    <div class="inline-checkbox my-2">
+      <input
+        type="checkbox"
+        formControlName="interested2"
+        value="I need to understand requirements and capabilities"
+      />
+      <small class="pl-2">
+        I need to understand requirements and capabilities</small
+      >
+    </div>
+
+    <div class="inline-checkbox my-2">
+      <input
+        type="checkbox"
+        formControlName="interested3"
+        value="I have a very specific need I need to discuss"
+      />
+      <small class="pl-2"> I have a very specific need I need to discuss</small>
+    </div>
+  </div>
+
+  <div class="mt-5">
+    <button
+    class="btn btn-next"
+    *ngIf="submitingForm === false"
+    next
+    type="submit"
+  >
+    Next Submit
+  </button>
+  <button
+    class="btn disabled btn-next"
+    [disabled]="submitingForm"
+    *ngIf="submitingForm"
+  >
+    <div class="d-flex justify-content-center">
+      <div class="spinner-border" role="status">
+        <span class="sr-only"></span>
+      </div>
+    </div>
+  </button>
+  </div>
+</form>

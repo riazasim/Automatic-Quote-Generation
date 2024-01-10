@@ -1,0 +1,97 @@
+<form
+  [formGroup]="laresIntegrationForm"
+  (ngSubmit)="formSubmit()"
+  class="form-inner location-form"
+>
+  <h3 class="heading-top">Lares integration</h3>
+  <p class="text-left pera mb-4 pb-lg-2">
+    Please let us now which of the following access solutions you use.
+  </p>
+  <small class="small-pera">Available integrations</small>
+  <div class="row form-row my-4 pb-4 radio-group">
+    <div class="col-md-12">
+      <div class="input-group">
+        <label class="label-radio label-item"
+          >
+          <input
+            type="radio"
+            value="2N"
+            name="integration"
+            formControlName="integration"
+          />
+          <span class="radio"></span>
+          <p>2N</p>
+        </label>
+      </div>
+    </div>
+    <div class="col-md-12 mt-3">
+      <div class="input-group">
+        <label class="label-radio"
+          >
+          <input
+            type="radio"
+            value="Dahua Access Control"
+            name="integration"
+            formControlName="integration"
+          />
+          <span class="radio"></span>
+          <p>Dahua Access Control</p>
+        </label>
+      </div>
+    </div>
+    <div class="col-md-12 mt-3">
+      <div class="input-group">
+        <label class="label-radio"
+          >
+          <input
+            type="radio"
+            value="Hikvision Access Control"
+            name="integration"
+            formControlName="integration"
+          />
+          <span class="radio"></span>
+          <p>Hikvision Access Control</p>
+        </label>
+      </div>
+    </div>
+    <div class="col-md-12 mt-3">
+      <div class="input-group">
+        <label class="label-radio"
+          >
+          <input
+            type="radio"
+            value="Google Nest"
+            name="integration"
+            formControlName="integration"
+          />
+          <span class="radio"></span>
+          <p>Google Nest</p>
+        </label>
+      </div>
+    </div>
+    <div class="col-md-12 mt-3">
+      <div class="input-group">
+        <label class="label-radio"
+          >
+          <input
+            type="radio"
+            value="Amazon Ring"
+            name="integration"
+            formControlName="integration"
+          />
+          <span class="radio"></span>
+          <p>Amazon Ring</p>
+        </label>
+      </div>
+    </div>
+  </div>
+  <app-field-error-display
+    [displayError]="isFieldValid('integration')"
+    errorMsg="Please enter access Point name"
+  >
+  </app-field-error-display>
+  <button class="btn btn-next" next type="submit">Next</button>
+  <button class="btn btn-back mt-2" type="button" (click)="goBack()">
+    Back
+  </button>
+</form>
